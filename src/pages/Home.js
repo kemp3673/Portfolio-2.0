@@ -1,5 +1,6 @@
 import React from "react";
 import Aos from "aos";
+import Weather from "../components/weather";
 import smile from "../images/Hello_smile.png";
 
 const Home = () => {
@@ -8,21 +9,11 @@ const Home = () => {
   }, []);
   return (
     <div className="home">
-      <div className="home__container">
-        <div className="home__container__left">
-          <h1 data-aos="fade-right">Hello, I'm</h1>
-          <h1 data-aos="fade-right">Nicholas</h1>
-          <h1 data-aos="fade-right">I'm a</h1>
-          <h1 data-aos="fade-right">Web Developer</h1>
-        </div>
-        <div className="home__container__right">
-          <img
-            data-aos="fade-left"
-            src={smile}
-            alt="Hello Smile"
-          />
-        </div>
-      </div>
+      <>
+        <h1>Hello</h1>
+        <img src={smile} alt="smile" />
+      </>
+      <Weather/>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import * as dotenv from "dotenv";
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
-import helmet from "helmet";
 import path from "path";
 import compression from "compression";
 import WeatherController from "./controller/controller";
@@ -15,7 +14,6 @@ const PORT = process.env.PORT || 8080;
 
 // Middlewares
 app.use(compression());
-app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
