@@ -1,6 +1,6 @@
 import React from "react";
 import Aos from "aos";
-import Weather from "../components/weather";
+import Weather from "../components/Weather/weather";
 import smile from "../images/Hello_smile.png";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
     <div className="home">
       <>
         <h1>Hello</h1>
-        <img src={smile} alt="smile" />
+        <img src={smile} alt="smile" style={{height: '100px'}}/>
       </>
       <Weather/>
     </div>
