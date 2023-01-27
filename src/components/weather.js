@@ -30,14 +30,14 @@ const Weather = () => {
           <div>{weather ?
             <div>
               <h2>{weather.location.name}, {weather.location.region}</h2>
-
               <h3>Current Time in {weather.location.name}: {timeParse(weather.location.localtime)}</h3>
               <h3>Current Temperature: {weather.current.temperature}&deg;C / {(weather.current.temperature * (9/5)) + 32}&deg;F</h3>
+              <h3>Feels Like: {weather.current.feelslike}&deg;C / {(weather.current.feelslike * (9/5)) + 32}&deg;F</h3>
+              <h3>Wind Speed: {Math.round(weather.current.wind_speed * 0.621371)} mph</h3>
               <figure>
                 <img src={weather.current.weather_icons[0]} alt="Current Weather Icon"/>
                 <figcaption>{weather.current.weather_descriptions[0]}</figcaption>
               </figure>
-
             </div>
           : "Loading..."}
           </div>
