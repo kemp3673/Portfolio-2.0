@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getLocalWeather } from '../model/model';
+import getLocalWeather from '../model/model';
 
 const localWeather = (req: Request, res: Response) => {
 getLocalWeather()

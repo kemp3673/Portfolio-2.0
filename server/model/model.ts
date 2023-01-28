@@ -6,7 +6,7 @@ const WXAPI = process.env.WXAPI;
 const Location = process.env.LOCATION;
 const WXENDPOINT = process.env.WXENDPOINT;
 
-export const getLocalWeather = async () => {
+const getLocalWeather = async () => {
 const query = `${WXENDPOINT}?query=${Location}&access_key=${WXAPI}`;
 try {
 const response = await axios.get(query);
@@ -16,7 +16,7 @@ throw {status: 500, message: 'Cannot Get Weather Data'};
 }
 }
 
-//export default getLocalWeather;
+export default getLocalWeather;
 
 
 
