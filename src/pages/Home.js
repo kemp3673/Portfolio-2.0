@@ -1,6 +1,8 @@
 import React from "react";
 import Aos from "aos";
 import Weather from "../components/Weather/weather";
+import TicTacToe from "../components/Games/TicTacToe/TicTacToe";
+import Projects from "../components/Projects/projects";
 import smile from "../images/Hello_smile.png";
 
 const Home = () => {
@@ -9,11 +11,9 @@ const Home = () => {
   }, []);
   return (
     <div className="home">
-      <>
-        <h1>Hello</h1>
-        <img src={smile} alt="smile" style={{height: '100px'}}/>
-      </>
       <Weather/>
+      <Projects/>
+      <TicTacToe/>
     </div>
   );
 }

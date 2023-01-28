@@ -1,17 +1,14 @@
 import { Request, Response } from 'express';
-import WeatherModel from '../model/model';
+import { getLocalWeather } from '../model/model';
 
-
-class WeatherController {
-  public static localWeather(req: Request, res: Response) {
-    WeatherModel.getLocalWeather()
-      .then((data) => {
-        res.status(200).send(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+const localWeather = (req: Request, res: Response) => {
+getLocalWeather()
+.then((data: any) => {
+res.status(200).send(data);
+})
+.catch((err: { message: any; }) => {
+res.status(500).send(err.message);
+});
 }
 
-export default WeatherController;
+export default localWeather;
