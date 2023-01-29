@@ -6,6 +6,7 @@ function TicTacToe() {
   const [player, setPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
   const [draw, setDraw] = useState(false);
+  const [hideCurrentPlayer, setHideCurrentPlayer] = useState(false);
 
   const nextPlayer = player === "X" ? "O" : "X";
 
@@ -43,11 +44,13 @@ function TicTacToe() {
         newBoard[a] === newBoard[c]
       ) {
         setWinner(player);
+        setHideCurrentPlayer(true);
         return;
       }
     }
     if (!newBoard.includes(null) && !winner) {
       setDraw(true);
+      setHideCurrentPlayer(true);
     }
     setPlayer(nextPlayer);
   };
@@ -57,11 +60,18 @@ function TicTacToe() {
     setPlayer("X");
     setWinner(null);
     setDraw(false);
+    setHideCurrentPlayer(false);
   };
 
   return (
     <div className="GameContainer">
-      <p className="CurrentPlayer">Current Player: {player}</p>
+      {winner ? (
+          <p className="Winner">Congratulations {winner}! You are the winner!</p>
+      ) : null}
+      {draw ? (
+          <p className="Draw">It's a draw!</p>
+      ) : null}
+      {hideCurrentPlayer ? null : <p className="CurrentPlayer">Current Player: {player}</p>}
       <div className="Board">
         <table className="GameWrapper">
           <tbody>
@@ -141,16 +151,6 @@ function TicTacToe() {
           </tbody>
         </table>
       </div>
-      {winner ? (
-        <div className="Winner">
-          <p>Congratulations {winner}! You are the winner!</p>
-        </div>
-      ) : null}
-      {draw ? (
-        <div className="Draw">
-          <p>It's a draw!</p>
-        </div>
-      ) : null}
       {winner || draw ?
         <button className="ResetButton" onClick={handleReset}>
         Play Again
