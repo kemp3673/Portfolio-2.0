@@ -1,14 +1,14 @@
 const request = require("supertest");
-const server = require("./index.ts");
+const server = require("./app.ts");
 const axios = require("axios");
 const nodemailer = require("nodemailer");
-const { getLocalWeather } = require("./model/model");
+// const { getLocalWeather } = require("./model/model");
 
-jest.mock("axios");
-jest.mock("nodemailer");
+// jest.mock("axios");
+// jest.mock("nodemailer");
 
-axios.get = jest.fn();
-nodemailer.createTransport = jest.fn();
+// axios.get = jest.fn();
+// nodemailer.createTransport = jest.fn();
 
 describe("Server", () => {
   afterEach(async () => {
@@ -36,53 +36,62 @@ describe("Server", () => {
       const mockResponse = {
         statusCode: 200,
         data: {
-          location: {
-            country: "United States of America",
-            lat: "36.530",
-            localtime: "String",
-            localtime_epoch: 1,
-            lon: "-87.359",
-            name: "Clarksville",
-            region: "Tennessee",
-            timezone_id: "America/Chicago",
-            utc_offset: "-6.0",
-          },
-          current: {
-            cloudcover: 1,
-            feelslike: 1,
-            humidity: 1,
-            is_day: "yes",
-            observation_time: "string",
-            precip: 1,
-            pressure: 1,
-            temperature: 1,
-            uv_index: 1,
-            visibility: 1,
-            weather_code: 1,
-            weather_descriptions: [],
-            weather_icons: [],
-            wind_degree: 1,
-            wind_dir: "String",
-            wind_speed: 1,
-          },
-          request: {
-            language: "en",
-            query: "Clarksville, United States of America",
-            type: "City",
-            unit: "m",
-          },
-        },
+            location: {
+              name: 'Clarksville',
+              region: 'Tennessee',
+              country: 'USA',
+              lat: 36.52,
+              lon: -87.27,
+              tz_id: 'America/Chicago',
+              localtime_epoch: 1674979485,
+              localtime: '2023-01-29 2:04'
+            },
+            current: {
+              last_updated_epoch: 1674979200,
+              last_updated: '2023-01-29 02:00',
+              temp_c: 8.9,
+              temp_f: 48,
+              is_day: 0,
+              condition: {
+                text: 'Overcast',
+                icon: '//cdn.weatherapi.com/weather/64x64/night/122.png',
+                code: 1009
+              },
+              wind_mph: 10.5,
+              wind_kph: 16.9,
+              wind_degree: 160,
+              wind_dir: 'SSE',
+              pressure_mb: 1018,
+              pressure_in: 30.06,
+              precip_mm: 0.9,
+              precip_in: 0.04,
+              humidity: 71,
+              cloud: 100,
+              feelslike_c: 6.1,
+              feelslike_f: 42.9,
+              vis_km: 16,
+              vis_miles: 9,
+              uv: 1,
+              gust_mph: 19,
+              gust_kph: 30.6
+          }
+        }
       };
-      axios.get.mockResolvedValueOnce(mockResponse);
-      // Using supertest to make a request to the server
+      axios.request.mockImplementation(() => Promise.resolve(mockResponse));
       const response = await request(server).get("/weather");
       expect(response.statusCode).toBe(200);
       expect(response.body).toEqual(mockResponse.data);
+
+      /*** Another way to test ***/
+      // axios.get.mockResolvedValueOnce(mockResponse);
+      // const response = await request(server).get("/weather");
+      // expect(response.statusCode).toBe(200);
+      // expect(response.body).toEqual(mockResponse.data);
     });
 
     it("Unsuccessful Attempt - 500", async () => {
       const mockError = new Error("Cannot Get Weather Data");
-      axios.get.mockRejectedValue(mockError);
+      axios.request.mockRejectedValue(mockError);
       const response = await request(server).get("/weather");
       expect(response.statusCode).toBe(500);
       expect(response.text).toEqual("Cannot Get Weather Data");
@@ -94,49 +103,12 @@ describe("Server", () => {
       // });
     });
   });
-  describe("Route '/contact'", () => {
-    it("Successful Attempt - 200", async () => {
-      expect(false).toBe(true);
-    });
-    it("Unsuccessful Attempt - 500", async () => {
-      expect(false).toBe(true);
-    });
-  });
-  // it("Returns successful when form submitted", async () => {
-  //   // TODO - Mock the sendEmail function
-  //   //let spy = jest.spyOn(sendEmail.sendEmail, 'sendEmail').mockImplementation(() => {return true});
-  //   const response = await request(server).post("/contact").send({
-  //     firstName: "John",
-  //     lastName: "Doe",
-  //     email: "test@test.com",
-  //     phone: "1234567890",
-  //     message: "Hello World",
+  // describe("Route '/contact'", () => {
+  //   it("Successful Attempt - 200", async () => {
+  //     expect(false).toBe(true);
   //   });
-  //   expect(response.statusCode).toBe(200);
-  //   expect(response.body).toEqual(
-  //     expect.objectContaining({
-  //       success: true,
-  //       message: "Email Sent",
-  //     })
-  //   );
-  // });
-
-  // it("Returns error when form submitted with improper user/password", async () => {
-  //   const response = await request(server).post("/contact").send({
-  //     user: "wrongUser@gmail.com",
-  //     password: "wrongPassword",
-  //     firstName: "Jest",
-  //     lastName: "Testing",
-  //     email: "test@test.com",
-  //     phone: "1234567890",
-  //     message: "This is a test",
+  //   it("Unsuccessful Attempt - 500", async () => {
+  //     expect(false).toBe(true);
   //   });
-  //   expect(response.statusCode).toBe(500);
-  //   expect(response.body).toEqual(
-  //     expect.objectContaining({
-  //       success: false,
-  //       message: "Email failed to send",
-  //     })
-  //   );
   // });
 });

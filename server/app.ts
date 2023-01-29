@@ -3,8 +3,8 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import path from "path";
 import compression from "compression";
-import localWeather from "./controller/controller";
-
+import router from "./router/router";
+//TODO - import router library
 
 // Load env variables
 const app = express();
@@ -16,10 +16,10 @@ const PORT = process.env.PORT || 8080;
 app.use(compression());
 app.use(cors());
 app.use(express.json());
-
-// Routes
 app.use(express.static(path.join(__dirname, "../public")));
-app.get('/weather', localWeather);
+app.use(express.urlencoded({ extended: false }));
+app.use(router)
+
 
 // Path: server/src/index.ts
 const server = app.listen(PORT, () => console.log(`Server Running here 👉 https://localhost:${PORT}`));

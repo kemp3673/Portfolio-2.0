@@ -1,5 +1,5 @@
 import HackReactor from '../images/HackReactor.jpeg';
-import APUS from '../images/APUS.png';
+import APUS from '../images/apus.jpg';
 import USAF from '../images/USAF.jpg';
 import Boyle from '../images/boyle.jpeg';
 
@@ -64,7 +64,7 @@ export const ProjectsData = [
     id: 1,
     image: '',
     title: 'Hack Reactor',
-    description: 'Aided and mentored students in JavaScript fundamentals and full-stack development. Reported student performance reports to track student progress and identify students at risk of falling behind the curve.'
+    description: 'Aided and mentored students in JavaScript fundamentals and full-stack development. Reported student performance reports to track student progress and identify students at risk of falling behind the curve.',
     url: 'https://www.hackreactor.com/'
   },
 ];
