@@ -75,7 +75,7 @@ function TicTacToe() {
       <div className="Board">
         <table className="GameWrapper">
           <tbody>
-            <trow>
+            <tr>
               <td
                 className="GameCell"
                 id={0}
@@ -97,10 +97,10 @@ function TicTacToe() {
               >
                 {board[2]}
               </td>
-            </trow>
+            </tr>
           </tbody>
           <tbody>
-            <trow>
+            <tr>
               <td
                 className="GameCell"
                 id={3}
@@ -122,10 +122,10 @@ function TicTacToe() {
               >
                 {board[5]}
               </td>
-            </trow>
+            </tr>
           </tbody>
           <tbody>
-            <trow>
+            <tr>
               <td
                 className="GameCell"
                 id={6}
@@ -147,7 +147,7 @@ function TicTacToe() {
               >
                 {board[8]}
               </td>
-            </trow>
+            </tr>
           </tbody>
         </table>
       </div>

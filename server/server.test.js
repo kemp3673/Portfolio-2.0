@@ -2,13 +2,7 @@ const request = require("supertest");
 const server = require("./app.ts");
 const axios = require("axios");
 const nodemailer = require("nodemailer");
-// const { getLocalWeather } = require("./model/model");
 
-// jest.mock("axios");
-// jest.mock("nodemailer");
-
-// axios.get = jest.fn();
-// nodemailer.createTransport = jest.fn();
 
 describe("Server", () => {
   afterEach(async () => {
@@ -81,12 +75,6 @@ describe("Server", () => {
       const response = await request(server).get("/weather");
       expect(response.statusCode).toBe(200);
       expect(response.body).toEqual(mockResponse.data);
-
-      /*** Another way to test ***/
-      // axios.get.mockResolvedValueOnce(mockResponse);
-      // const response = await request(server).get("/weather");
-      // expect(response.statusCode).toBe(200);
-      // expect(response.body).toEqual(mockResponse.data);
     });
 
     it("Unsuccessful Attempt - 500", async () => {
@@ -95,20 +83,18 @@ describe("Server", () => {
       const response = await request(server).get("/weather");
       expect(response.statusCode).toBe(500);
       expect(response.text).toEqual("Cannot Get Weather Data");
-
-      // Calling on model function to test
-      // return getLocalWeather().catch((error) => {
-      //   expect(error.message).toEqual(mockError);
-      //   expect(error.status).toEqual(500);
-      // });
     });
   });
-  // describe("Route '/contact'", () => {
-  //   it("Successful Attempt - 200", async () => {
-  //     expect(false).toBe(true);
-  //   });
-  //   it("Unsuccessful Attempt - 500", async () => {
-  //     expect(false).toBe(true);
-  //   });
-  // });
+  describe("Route '/contact'", () => {
+    it("Successful Attempt - 200", async () => {
+      const response = await request(server).get("/contact");
+      expect(response.statusCode).toBe(200);
+    });
+    it("Unsuccessful Attempt - 500", async () => {
+      const mockError = new Error("Cannot Get Weather Data");
+      axios.request.mockRejectedValue(mockError);
+      const response = await request(server).get("/contact");
+      expect(response.statusCode).toBe(500);
+    });
+  });
 });

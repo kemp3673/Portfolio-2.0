@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Chrono } from "react-chrono";
 import { EducationData } from '../../Data/data';
+
+
 
 const Education = () => {
   const items = [];
@@ -21,7 +23,7 @@ const Education = () => {
 
   return (
     <div className="education" style={{width:"100vw", height: "fit-content", justifyContent: "center"}}>
-      <Chrono items={items} mode="VERTICAL_ALTERNATING" focusActiveItemOnLoad="true" enableOutline="true" mediaHeight="50" theme={{primary: "blue", secondary: "white", cardBgColor: "white", cardForeColor: "gray", titleColor:"black"}} />
+      <Chrono items={items} mode="VERTICAL_ALTERNATING" disableNavOnKey="true" hideControls="true" mediaHeight="50" theme={{primary: "blue", secondary: "white", cardBgColor: "white", cardForeColor: "gray", titleColor:"black"}} />
     </div>
   );
 };

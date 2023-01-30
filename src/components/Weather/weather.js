@@ -8,11 +8,10 @@ const Weather = () => {
   // Get weather data from API when component mounts
   React.useEffect(() => {
     axios.get('/weather').then((response) => {
-      console.log(response.data);
       setWeather(response.data);
     })
     .catch((error) => {
-      console.log(error);
+      console.log("There was a problem getting the weather data.");
     });
   }, []);
 
