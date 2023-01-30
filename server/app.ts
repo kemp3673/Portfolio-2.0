@@ -1,10 +1,9 @@
 import * as dotenv from "dotenv";
-import express, { Express, Request, Response } from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import path from "path";
 import compression from "compression";
 import router from "./router/router";
-//TODO - import router library
 
 // Load env variables
 const app = express();
