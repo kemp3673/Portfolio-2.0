@@ -39,6 +39,9 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
         <li onClick={() => sidebarClickHandler()}>
           <a href="#projects">Projects</a>
         </li>
+        {/* <li onClick={() => sidebarClickHandler()}>
+          <a href="#education">Education</a>
+        </li> */}
         <li onClick={() => sidebarClickHandler()}>
           <a href="#contact">Contact</a>
         </li>

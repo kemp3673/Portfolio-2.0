@@ -11,7 +11,7 @@ export const EducationData = [
     school: 'American Public University Systems',
     degree: '85 Credit Hours - Information Technology: Programming',
     year: '2021 - 2023',
-    description: `Relevant Courses include: Fundamentals of Programming, Introduction to Computer Science, Web Development Fundamentals, Introduction to Python, Introduction to Networking, Scripting Languages for the Administrator, Introduction to Object Oriented Programming with Java, Object Oriented Programming With Java, Application Development, Computer Systems Organization: Advanced, Wireless Networks, and  Computer Systems Organization: Intermediate`
+    // description: `Relevant Courses include: Fundamentals of Programming, Introduction to Computer Science, Web Development Fundamentals, Introduction to Python, Introduction to Networking, Scripting Languages for the Administrator, Introduction to Object Oriented Programming with Java, Object Oriented Programming With Java, Application Development, Computer Systems Organization: Advanced, Wireless Networks, and  Computer Systems Organization: Intermediate`
   },
 
   {
@@ -20,7 +20,7 @@ export const EducationData = [
     school: 'Hack Reactor',
     degree: 'Advanced Software Engineering Certificate',
     year: 'May 2022 - Aug 2022',
-    description: "Advanced Software Engineering Certificate"
+    // description: "Advanced Software Engineering Certificate"
   },
 
   {
@@ -29,7 +29,7 @@ export const EducationData = [
     school: 'American Public University Systems',
     degree: 'Bachelor of Applied Science - Technical Management/Project Management',
     year: '2016 - 2019',
-    description: "B.A.S. Technical Management: Project Management"
+    // description: "B.A.S. Technical Management: Project Management"
   }
 ];
 

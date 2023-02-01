@@ -15,7 +15,7 @@ const TopBar = ({menuOpen, setMenuOpen}) => {
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="left">
         <a href="#intro" className="logo">
-          Nick.
+          Nick K.
         </a>
         <div className="itemContainer">
           <PhoneAndroidIcon className="icon" />

@@ -1,9 +1,47 @@
 .intro {
-  background-color: lightcoral;
+  background-color: white;
   height: calc(100vh - 50px);
   width: 100vw;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
+}
+
+.introLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.introRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  overflow-x: visible;
+}
+
+.model {
+  max-width: 75%;
+  max-height: 75%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
+}
+
+.typingVideo {
+  object-fit: cover;
+  position: absolute;
+  top: 25%;
+  left: 8.3%;
+  max-width: 20.5%;
+  max-height: 32%;
+  transform: skew(6deg, -30deg);
 }

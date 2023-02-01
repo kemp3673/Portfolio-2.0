@@ -38,7 +38,19 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
-      }
+      },
+      {
+        test: /\.mp4$/,
+        use: [
+            {
+                loader: "file-loader",
+                options: {
+                    name: "[name].[ext]",
+                    outputPath: "video"
+                }
+            }
+        ]
+    }
     ]
   },
   // [devtool] this is an additional source map that will let the browser know what files are running our code.
