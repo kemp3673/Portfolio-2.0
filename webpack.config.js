@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "development",
-  entry: path.join(__dirname, "src", "index.js"),
+  entry: path.join(__dirname, "client/src", "index.js"),
   output: {
     path:path.resolve(__dirname, "public"),
   },
@@ -59,7 +59,7 @@ module.exports = {
 module.exports = {
   mode: 'production',
   entry: {
-    main: path.join(__dirname, "src", "index.js"),
+    main: path.join(__dirname, "client/src", "index.js"),
   },
   output: {
     path:path.resolve(__dirname, "public"),

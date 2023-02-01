@@ -97,4 +97,16 @@ describe("Server", () => {
       expect(response.statusCode).toBe(500);
     });
   });
+  describe("Route '/downloadPDF'", () => {
+    it("Successful Attempt - 200", async () => {
+      const response = await request(server).get("/downloadPDF");
+      expect(response.statusCode).toBe(200);
+    });
+    // it("Unsuccessful Attempt - 500", async () => {
+    //   const mockError = new Error("There was a problem retrieving the pdf file");
+    //   axios.request.mockRejectedValue(mockError);
+    //   const response = await request(server).get("/downloadPDF");
+    //   expect(response.statusCode).toBe(500);
+    // });
+  });
 });

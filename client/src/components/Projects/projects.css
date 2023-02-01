@@ -1,0 +1,9 @@
+.projects {
+  background-color: lightgreen;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}

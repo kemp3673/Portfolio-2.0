@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Chrono } from "react-chrono";
 import { EducationData } from '../../Data/data';
+import "./education.css";
 
 
 
@@ -22,7 +23,9 @@ const Education = () => {
   });
 
   return (
-    <div className="education" style={{width:"100vw", height: "fit-content", justifyContent: "center"}}>
+    // TODO dont think this style is working
+    // TODO wrap in a container
+    <div className="education" style={{width:"95vw", height: "fit-content", justifyContent: "center", padding: "1rem"}}>
       <Chrono items={items} mode="VERTICAL_ALTERNATING" disableNavOnKey="true" hideControls="true" mediaHeight="50" theme={{primary: "blue", secondary: "white", cardBgColor: "white", cardForeColor: "gray", titleColor:"black"}} />
     </div>
   );
