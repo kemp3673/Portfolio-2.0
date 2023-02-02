@@ -6,9 +6,11 @@ import "./intro.css";
 const Intro = () => {
   return (
     <div className="intro" id="intro">
-      <Laptop className="introLeft"/>
+      <div className="introLeft">
+      <TypeWriter />
+      </div>
       <div className="introRight">
-        <TypeWriter />
+      <Laptop />
       </div>
     </div>
   );

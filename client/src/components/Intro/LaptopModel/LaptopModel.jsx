@@ -1,79 +1,88 @@
-import React, { useEffect } from "react";
-import "./laptopModel.css";
+import React from "react";
 import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import * as dat from "dat.gui";
 
-const LaptopModel = () => {
-  useEffect(() => {
-    /**** Scene ****/
-    const scene = new THREE.Scene();
+class ThreeScene extends React.Component {
+  componentDidMount() {
+    const width = this.mount.clientWidth;
+    const height = this.mount.clientHeight;
+    this.scene = new THREE.Scene();
 
-    /**** Camera ****/
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    camera.position.set(0, 0, 1);
+    /**** Renderer *****/
+    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer.setClearColor("#ffffff");
+    this.renderer.setSize(width, height);
+    this.mount.appendChild(this.renderer.domElement);
 
-    /**** Renderer ****/
-    const canvas = document.getElementById("myThreeJSCanvas");
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    /**** Camera *****/
+    // PerspectiveCamera(fov : Number, aspect : Number, near : Number, far : Number)
+    this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    this.camera.position.z = 8;
+    this.camera.position.y = 5;
 
-    /**** Lighting ****/
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-    ambientLight.castShadow = true;
-    scene.add(ambientLight);
+    /**** Controls *****/
+    const controls = new OrbitControls(this.camera, this.renderer.domElement);
+    controls.enableZoom = false;
+    controls.enablePan = false;
 
-    // const spotLight = new THREE.SpotLight(0xffffff, 1);
-    // spotLight.position.set(0, 30, 100);
-    // spotLight.castShadow = true;
-    // scene.add(spotLight);
+    /**** Lights *****/
+    var lights = [];
+    lights[0] = new THREE.PointLight(0xffffff, 1, 0);
+    lights[1] = new THREE.PointLight(0xffffff, 1, 0);
+    lights[2] = new THREE.PointLight(0xffffff, 1, 0);
+    lights[0].position.set(0, 200, 0);
+    lights[1].position.set(100, 200, 100);
+    lights[2].position.set(-100, -200, -100);
+    this.scene.add(lights[0]);
+    this.scene.add(lights[1]);
+    this.scene.add(lights[2]);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(0, 30, 100);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
-
-    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight2.position.set(0, 30, -100);
-    directionalLight2.castShadow = true;
-    scene.add(directionalLight2);
-
-    /**** Animate ****/
-    const animate = () => {
-      renderer.render(scene, camera);
-      window.requestAnimationFrame(animate);
-    };
-    animate();
-
-    /**** Controls ****/
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.update();
-
-    /**** Model ****/
+    /**** Models *****/
     const laptopModel = new URL("../../../static/laptop.glb", import.meta.url);
     const loader = new GLTFLoader();
     loader.load(laptopModel.href, (gltf) => {
       const model = gltf.scene;
-      gltf.scene.scale.set(0.15, 0.15, 0.15);
-      gltf.scene.rotation.set(0, 1, 0);
-      gltf.scene.position.set(0, 0, 0);
+      // (X, Y, Z)
+      gltf.scene.scale.set(1.5, 1.5, 1.5);
+      // (X, Y, Z)
+      gltf.scene.rotation.set(0, -0.42, -0.05);
+      // (X, Y, Z)
+      gltf.scene.position.set(0, -1.5, 0);
 
-      scene.add(model);
+      this.scene.add(model);
     });
-  }, []);
 
-  return (
-    <div className="laptopModel">
-      <canvas id="myThreeJSCanvas" />
-    </div>
-  );
-};
+    /**** Start Animation *****/
+    this.start();
+  }
+  start = () => {
+    if (!this.frameId) {
+      this.frameId = requestAnimationFrame(this.animate);
+    }
+  };
+  stop = () => {
+    cancelAnimationFrame(this.frameId);
+  };
+  animate = () => {
+    //Animate Models Here
+    //ReDraw Scene with Camera and Scene Object
+    this.renderScene();
+    this.frameId = window.requestAnimationFrame(this.animate);
+  };
+  renderScene = () => {
+    if (this.renderer) this.renderer.render(this.scene, this.camera);
+  };
 
-export default LaptopModel;
+  render() {
+    return (
+      <div
+        style={{ width: "100%", height: "100%", overflow: "hidden" }}
+        ref={(mount) => {
+          this.mount = mount;
+        }}
+      />
+    );
+  }
+}
+export default ThreeScene;
