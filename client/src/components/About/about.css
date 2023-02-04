@@ -6,4 +6,5 @@
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
+  z-index: 2;
 }
