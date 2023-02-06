@@ -97,6 +97,7 @@
   100% { transform: scale(0.25,0.25)    translateY(0); }
 }
 
+/* TODO -- highlighting of <a> tags on mobile may be cause by components utilizing the cursor: pointer styling. Look into disabling that on mobile views */
 @media screen and (max-width: 768px) {
   .intro {
     flex-direction: column;

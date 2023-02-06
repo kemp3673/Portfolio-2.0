@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import DownloadIcon from '@mui/icons-material/Download';
 import axios from "axios";
 import FileDownload from 'js-file-download';
@@ -9,6 +9,21 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
   const sidebarClickHandler = () => {
     setMenuOpen(false);
   };
+
+  // Ref to hold modal element
+  let ref = useRef();
+  // Handle click outside of modal
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target) && event.target.className !== "hamburger" && event.target.className !== "line1" && event.target.className !== "line2" && event.target.className !== "line3") {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      window.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [ref]);
 
   // Function will execute on click of button
   const resumeDownloader = (e) => {
@@ -28,20 +43,17 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
 
   //TODO add ref to menu and add event listener to close menu when clicking outside of menu
   return (
-    <div className={"menu " + (menuOpen && "active")}>
+    <div className={"menu " + (menuOpen && "active")} ref={ref}>
       <ul>
         <li onClick={() => sidebarClickHandler()}>
           <a href="#intro">Home</a>
         </li>
         <li onClick={() => sidebarClickHandler()}>
-          <a href="#about">About</a>
+          <a href="#projects">Portfolio</a>
         </li>
         <li onClick={() => sidebarClickHandler()}>
-          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
         </li>
-        {/* <li onClick={() => sidebarClickHandler()}>
-          <a href="#education">Education</a>
-        </li> */}
         <li onClick={() => sidebarClickHandler()}>
           <a href="#contact">Contact</a>
         </li>

@@ -25,8 +25,8 @@ const Home = () => {
       <div className="sections">
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <Intro />
-        <About />
         <Projects />
+        <About />
         <Contact />
       </div>
     </div>

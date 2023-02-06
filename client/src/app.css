@@ -1,5 +1,7 @@
 * {
   margin: 0;
   overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 

@@ -1,10 +1,98 @@
 .about {
-  background-color: lightblue;
+  background-color: #1C768F;
   height: calc(100vh - 50px);
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  z-index: 2;
+  padding: 20px;
+  font-family: "Roboto slab", sans-serif;
+  font-weight: 400;
+}
+
+.about h1 {
+  font-size: 3.125rem;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+}
+
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  max-width: 1200px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.aboutDescription {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: #032539;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links {
+  margin: 20px 10px 0 10px;
+  width: 40px;
+  height: 40px;
+  color: #032539;
+  transition: all 0.3s ease-in-out;
+  font-size: large;
+}
+
+.links:hover {
+  opacity: 0.7;
+}
+
+.aboutImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid #f5f5f5;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 0;
+  }
+  .aboutDescription {
+    font-size: 0.7rem;
+  }
+
+  .aboutContainer {
+    flex-direction: column;
+    width: 85%;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .aboutImg {
+    margin: 10% 0 10% 0;
+    padding: 0;
+    max-height: 150px;
+    max-width: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
 }

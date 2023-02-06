@@ -5,11 +5,9 @@ import "./topbar.css";
 
 const TopBar = ({menuOpen, setMenuOpen}) => {
 
-  const menuClickHandler = () => {
+  const menuClickHandler = (e) => {
       setMenuOpen(!menuOpen);
   };
-
-
 
   return (
     <div className={"topbar " + (menuOpen && "active")}>
@@ -25,7 +23,7 @@ const TopBar = ({menuOpen, setMenuOpen}) => {
         </div>
       </div>
       <div className="right">
-        <div className="hamburger" onClick={() => menuClickHandler()}>
+        <div className="hamburger" onClick={(e) => menuClickHandler(e)}>
           <span className="line1"></span>
           <span className="line2"></span>
           <span className="line3"></span>
