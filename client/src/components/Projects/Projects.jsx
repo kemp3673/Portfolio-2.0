@@ -1,6 +1,5 @@
 import React from "react";
 import "./projects.css";
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 // Images
 import wagsandwalkies from "../../assets/wagsandwalkies.png";
@@ -11,7 +10,7 @@ import eCommerce from "../../assets/eCommerce.jpg";
 const Projects = () => {
   const list = {
     featured: {
-      title: "Local Pet Walker",
+      title: "Featured",
       image: wagsandwalkies,
       description:
         "Developed a fully functional website using Express.js and React, incorporating features such as a contact form, gallery for pet images, and a testimonial component to showcase customer feedback. Utilized CSS animations and SVG elements to create visually appealing and modern design elements, such as waves and other design flourishes.",
@@ -55,22 +54,33 @@ const Projects = () => {
   return (
     <div className="projects" id="projects">
       <h1>Portfolio</h1>
+      <ul>
+        <li id="featured" className="selected" onClick={(e) => handleChange(e)}>
+          Featured
+        </li>
+        <li id="jobSearchingSite" onClick={(e) => handleChange(e)}>
+          Job Searching Site
+        </li>
+        <li id="eCommerceService" onClick={(e) => handleChange(e)}>
+          E-Commerce Service
+        </li>
+        <li id="portfolioSite" onClick={(e) => handleChange(e)}>
+          Portfolio Site
+        </li>
+      </ul>
       <div className="portfolioContainer">
-        {Object.keys(list).map((item) => (
-          <div className="portfolioItem" key={item}>
-            <div className="overlay">
-              <h3 className="title">{list[item].title}</h3>
-              <img src={list[item].image} alt={list[item].name + "image"} />
-            </div>
-            <div className="description">
-              <p>{list[item].description}</p>
-            </div>
+        <div className="portfolioItem">
+          <div className="overlay">
+            {/* <h3 className="title">{selected.title}</h3> */}
+            <img src={selected.image} alt={selected.id} />
           </div>
-        ))}
+          <div className="description">
+            <p>{selected.description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Projects;
-

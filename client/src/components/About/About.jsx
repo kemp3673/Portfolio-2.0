@@ -29,8 +29,9 @@ const About = () => {
           next big thing in my life and enjoy taking on challenges, I am always
           looking for opportunities to learn, grow and make an impact in my
           field.
-        </p>
-        <div className="socialLinks">
+        <span>
+          <br />
+          <div className="socialLinks">
           <a
             href="https://www.linkedin.com/in/nicholas-kempkes/"
             target="_blank"
@@ -38,7 +39,7 @@ const About = () => {
             ariaLabel="Link to LinkedIn Profile"
             className="links"
           >
-            <LinkedInIcon />
+            <LinkedInIcon style={{fontSize: "32px"}}/>
           </a>
           <a
             href="https://github.com/kemp3673"
@@ -47,9 +48,11 @@ const About = () => {
             ariaLabel="Link to Github Profile"
             className="links"
           >
-            <GitHubIcon />
+            <GitHubIcon style={{fontSize: "32px"}}/>
           </a>
         </div>
+        </span>
+        </p>
       </div>
     </div>
   );

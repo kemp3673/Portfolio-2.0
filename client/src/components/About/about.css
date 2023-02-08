@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  padding: 20px;
+  margin:0 auto;
   font-family: "Roboto slab", sans-serif;
   font-weight: 400;
 }
@@ -23,20 +23,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: fit-content;
+  justify-content: center;
+  width: 85%;
+  height: 40%;
   max-width: 1200px;
-  background-color: #f5f5f5;
-  border-radius: 20px;
-  padding: 20px;
+  margin: 20px;
 }
 
 .aboutDescription {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
+  padding: 20px;
   margin: 0;
   color: #032539;
+  background-color: #f5f5f5;
+  border-radius: 20px;
 }
 
 .socialLinks {
@@ -51,7 +53,6 @@
   height: 40px;
   color: #032539;
   transition: all 0.3s ease-in-out;
-  font-size: large;
 }
 
 .links:hover {
@@ -69,7 +70,7 @@
   border: 1px solid #f5f5f5;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (orientation: portrait) {
   .about {
     padding: 0;
   }
@@ -88,11 +89,40 @@
   }
 
   .aboutImg {
-    margin: 10% 0 10% 0;
+    margin: 0;
     padding: 0;
     max-height: 150px;
     max-width: 150px;
     object-fit: contain;
     margin-bottom: 10px;
   }
+}
+
+@media screen and (orientation: landscape) {
+  /* .about {
+    padding: 0;
+  }
+  .aboutDescription {
+    font-size: 0.7rem;
+  }
+
+  .aboutContainer {
+    flex-direction: row;
+    width: 85%;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    height: 65px;
+  }
+
+  .aboutImg {
+    margin: 0;
+    padding: 0;
+    max-height: 150px;
+    max-width: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  } */
 }

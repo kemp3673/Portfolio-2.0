@@ -108,15 +108,14 @@
   .introLeft {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     opacity: 0.2;
-    padding-bottom: 50px;
     z-index: 2;
   }
   .introRight {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 2;
   }
   .downIconWrapper {
