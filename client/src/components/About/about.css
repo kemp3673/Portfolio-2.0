@@ -10,6 +10,10 @@
   margin:0 auto;
   font-family: "Roboto slab", sans-serif;
   font-weight: 400;
+  padding-top: 50px;
+  scroll-snap-type: y mandatory; /* Tried mandatory, but it jumped to next section always with mousewheel*/
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
 }
 
 .about h1 {

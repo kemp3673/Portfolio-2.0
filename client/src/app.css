@@ -3,5 +3,11 @@
   overflow-x: hidden;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-snap-type: y mandatory; /* Tried mandatory, but it jumped to next section always with mousewheel*/
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
+::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

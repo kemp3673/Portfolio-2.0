@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Aos from "aos";
 import ReactGA from "react-ga";
 
 import TopBar from "../components/TopBar/TopBar.jsx";
@@ -15,10 +14,6 @@ import "./Home.css";
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  React.useEffect(() => {
-    Aos.init({ duration: 10000 });
-    ReactGA.pageview(window.location.pathname);
-  }, []);
   return (
     <div className="home">
       <TopBar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
