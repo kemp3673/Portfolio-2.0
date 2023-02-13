@@ -71,12 +71,11 @@ const Projects = () => {
       <div className="portfolioContainer">
         <div className="portfolioItem">
           <div className="overlay">
-            {/* <h3 className="title">{selected.title}</h3> */}
             <img src={selected.image} alt={selected.id} />
           </div>
           <div className="description">
-            <p>{selected.description}</p>
-          </div>
+              <p>{selected.description}</p>
+            </div>
         </div>
       </div>
     </div>

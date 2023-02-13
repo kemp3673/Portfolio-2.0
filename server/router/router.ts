@@ -9,7 +9,7 @@ const app = express();
 // Route to get local weather API
 app.get('/weather', localWeather);
 // Route to get contact me endpoint
-app.get('/contact', contact)
+app.post('/contact', contact)
 // Route to retrieve resume pdf
 // handling PDF request
 app.get("/downloadPDF", (req, res) => {
