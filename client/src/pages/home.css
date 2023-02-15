@@ -2,10 +2,6 @@
   height: 100vh;
 }
 
-.sections {
-  position: absolute;
-  top: 100px;
-}
 /* TODO doesnt like this for some reason out of the blue. Wont allow me to apply to sections.  */
 /* .sections {
   position: absolute;

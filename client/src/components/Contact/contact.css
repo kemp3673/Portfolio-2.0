@@ -1,6 +1,8 @@
 .contact {
+  position: relative;
   background-color: #FDD446;
   height: calc(100vh - 50px);
+  min-height: 550px;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -11,6 +13,7 @@
 }
 
 .contactLeft {
+  min-height: 550px;
   flex: 1;
 }
 
@@ -18,7 +21,9 @@
   height: 100vh;
   width: 100%;
   object-fit: cover;
-  min-height: 400px;
+  min-height: 550px;
+  mask-image: linear-gradient(to right, rgba(253, 212, 70, 1) 80%, rgba(253, 212, 70, 0) 95%);
+  -webkit-mask-image: linear-gradient(to right, rgba(253, 212, 70, 1) 80%, rgba(253, 212, 70, 0) 95%);
 }
 
 .contactRight {
@@ -38,7 +43,7 @@
 }
 
 .contactForm {
-  width: 70%;
+  /* width: 70%; */
   height: 70%;
   display: flex;
   flex-direction: column;
@@ -46,14 +51,14 @@
   align-items: center;
 }
 
-.contactForm > input {
+.contactForm>input {
   font-family: "Roboto slab", sans-serif;
   width: 300px;
   height: 30px;
   font-size: 14px;
 }
 
-.contactForm > textarea {
+.contactForm>textarea {
   font-family: "Roboto slab", sans-serif;
   width: 300px;
   height: 100px;
@@ -61,7 +66,7 @@
   margin-top: 20px;
 }
 
-.contactForm > button {
+.contactForm>button {
   width: 150px;
   height: 40px;
   border: none;
@@ -75,41 +80,93 @@
   margin-top: 20px;
 }
 
-.contactForm > button:hover {
+.contactForm>button:hover {
   opacity: 0.8;
 }
 
 /* TODO Apply to other areas, hide selected box */
-.contactForm > input:focus {
+.contactForm>input:focus {
   outline: none;
 }
 
-.contactForm > textarea:focus {
+.contactForm>textarea:focus {
   outline: none;
 }
 
-.contactForm > input::placeholder {
+.contactForm>input::placeholder {
   color: #032539;
   opacity: 0.8;
 }
 
-.contactForm > textarea::placeholder {
+.contactForm>textarea::placeholder {
   color: #032539;
   opacity: 0.8;
 }
 
-.contactForm > input {
+.contactForm>input {
   background-color: #FDD446;
   border: none;
   border-bottom: 2px solid #032539;
 }
 
-.contactForm > textarea {
+.contactForm>textarea {
   background-color: #FDD446;
   border: none;
   border-bottom: 2px solid #032539;
+  resize: vertical;
 }
 
-.contactForm > label {
+.contactForm>label {
   color: #032539;
+}
+
+@media screen and (max-width: 768px) {
+  .contactLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .contactRight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(253, 212, 70, 0.9);
+  }
+
+  .contactForm {
+    width: 80%;
+    max-width: 400px;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(253, 212, 70, 0);
+  }
+
+  .contactForm>input {
+    width: 80%;
+    background-color: rgba(253, 212, 70, 0);
+    /* box-shadow: #FDD446 0px 0px 5px 5px; */
+  }
+
+  .contactForm>textarea {
+    width: 80%;
+    background-color: rgba(253, 212, 70, 0);
+    /* box-shadow: #FDD446 0px 0px 5px 5px; */
+  }
+
+  .contactTitle {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(253, 212, 70, 0);
+    /* box-shadow: #FDD446 0px 0px 5px 5px; */
+  }
 }

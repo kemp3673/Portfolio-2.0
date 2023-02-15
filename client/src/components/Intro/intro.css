@@ -10,6 +10,7 @@
   scroll-snap-align: start;
   overflow: hidden;
   padding-top: 50px;
+  min-height: 500px;
 }
 
 
@@ -32,31 +33,13 @@
   overflow: hidden;
 }
 
-
-.model {
-  max-width: 75%;
-  max-height: 75%;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-
-}
-
-.typingVideo {
-  object-fit: cover;
-  position: absolute;
-  top: 25%;
-  left: 8.3%;
-  max-width: 20.5%;
-  max-height: 32%;
-  transform: skew(6deg, -30deg);
-}
-
 .circleElement {
   position: absolute;
   left: -40vw;
   bottom: 0;
   width: 80vw;
   height: 125vh;
+  min-height: 650px;
   display: flex;
   justify-content: center;
   align-items: left;
@@ -65,8 +48,6 @@
   border-radius: 90%;
   float: right;
 }
-
-
 
 .downIconWrapper {
   width: 100vw;
@@ -100,9 +81,10 @@
 }
 
 /* TODO -- highlighting of <a> tags on mobile may be cause by components utilizing the cursor: pointer styling. Look into disabling that on mobile views */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .intro {
     flex-direction: column;
+    min-height: calc(100vh - 50px);
   }
   .circleElement {
     display: none;
@@ -121,7 +103,7 @@
     z-index: 2;
   }
   .downIconWrapper {
-    bottom: 10px;
+    bottom: -50px;
     z-index: 9;
   }
 }

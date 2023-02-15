@@ -1,29 +1,32 @@
 .about {
+  position: relative;
   background-color: whitesmoke;
-  height: calc(100vh - 2.5rem);
-  min-height: 32.5rem;
+  height: fit-content;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   scroll-snap-align: start;
   margin:0 auto;
   font-family: "Roboto slab", sans-serif;
   font-weight: 400;
-  padding-top: 2.5rem;
+
   scroll-snap-type: y mandatory; /* Tried mandatory, but it jumped to next section always with mousewheel*/
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
 }
 
 .about h1 {
-  font-size: 3.125rem;
+  position: relative;
+  padding-top: 75px;
+  font-size: 4rem;
   margin-bottom: 1rem;
   color: #032539;
+  min-height: fit-content;
 }
 
 .aboutLeft {
+  position: relative;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -33,41 +36,47 @@
 }
 
 .aboutRight {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  height: fit-content;
 }
 
-
 .aboutContainer {
+  max-width: 1200px;
+  position: relative;
   display: flex;
   flex-direction: row;
-  max-width: 60rem;
+  height: fit-content;
 }
 
 .aboutDescription {
+  position: relative;
   display: flex;
   flex-direction: column;
   font-family: "Roboto slab", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.5;
-  padding: 1rem;
-  margin: 0;
+  padding: 1.5rem;
+  margin-right: 2rem;
   color: #032539;
   text-align: justify;
+  height: fit-content;
 }
 
 .socialLinks {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: fit-content;
 }
 
 .links {
+  position: relative;
   margin: 1rem 0.5rem 0 0.5rem;
   width: 2rem;
   height: 2rem;
@@ -80,10 +89,10 @@
 }
 
 .aboutImg {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
   height: 20rem;
   transform: rotate(10deg);
   border: 0.1rem solid #032539;
@@ -91,6 +100,7 @@
 }
 
 .imageWrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,12 +112,13 @@
   box-shadow: black 0px 0px 0.25rem;
 }
 
-/* @media screen and (orientation: portrait) {
+@media screen and (max-width: 1140px) {
   .about {
     padding: 0;
   }
   .aboutDescription {
     font-size: 0.7rem;
+    margin-right: 0;
   }
 
   .aboutContainer {
@@ -128,33 +139,13 @@
     object-fit: contain;
     margin-bottom: 10px;
   }
-} */
 
-@media screen and (orientation: landscape) {
-  /* .about {
-    padding: 0;
-  }
-  .aboutDescription {
-    font-size: 0.7rem;
+  .imageWrapper {
+    height: 150px;
+    width: 150px;
   }
 
-  .aboutContainer {
-    flex-direction: row;
-    width: 85%;
+  .aboutLeft {
+    min-height: 200px;
   }
-
-  .about h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    height: 65px;
-  }
-
-  .aboutImg {
-    margin: 0;
-    padding: 0;
-    max-height: 150px;
-    max-width: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  } */
 }

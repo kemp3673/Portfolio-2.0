@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  min-height: 100vh;
+  height: fit-content;
   /* padding: 50px 0 50px 0; */
 }
 
@@ -71,8 +71,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 80%;
-  width: 80%;
+  max-height: 80%;
+  max-width: 80%;
   justify-content: center;
   background-color: whitesmoke;
   align-items: center;
@@ -84,7 +84,7 @@
   position: relative;
   display: flex;
   max-width: 900px;
-  max-height: calc(80% - 2rem);
+  /* max-height: calc(80% - 2rem); */
   margin: 10px;
   z-index: 2;
   transition: all 0.5s ease-in-out;
@@ -103,7 +103,7 @@
   height: 95%;
   width: 96%;
   border-radius: 20px;
-  max-width: 900px;
+  /* max-width: 900px; */
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
@@ -161,19 +161,12 @@
     width: 100%;
   }
 
-  .portfolioItem {
-    height: 50%;
-    width: 80%;
-    max-height: 250px;
-    max-width: 400px;
-  }
-
   .description {
-
+    width: 96%;
+    height: 93%;
     font-size: 0.8rem;
     font-weight: 600;
     text-align: justify;
-    padding: 0.5rem;
     z-index: 1;
   }
 }
