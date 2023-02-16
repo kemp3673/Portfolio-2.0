@@ -1,5 +1,7 @@
 import React from "react";
 import "./projects.css";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 // Images
 import wagsandwalkies from "../../assets/wagsandwalkies.png";
@@ -22,24 +24,21 @@ const Projects = () => {
       image: jobSearchingSite,
       description:
         "As part of a large group project, I contributed to the development of a job searching and posting application designed for career changers. I was responsible for implementing integrations with the Google Calendar and Geocoding APIs, as well as utilizing PostgreSQL Geo-extensions, to provide advanced calendar and location-based features within the app. I also assisted in the development of a multi-page React application, complete with routing capabilities for different account types, ensuring a seamless user experience.",
-      link: "http://wagsandwalkies.dog/",
-      repo: "https://github.com/kemp3673/WagsAndWalkies",
+      repo: "https://github.com/kemp3673/GreenHorn",
     },
     eCommerceService: {
       title: "E-Commerce Service",
       image: eCommerce,
       description:
         "As part of a collaborative effort, I participated in creating a new service application for an eCommerce website with legacy data. I was responsible for designing and developing a scalable RESTful API using Express.js and PostgreSQL, incorporating optimization techniques to enhance performance and minimize server load. This resulted in a capacity of 1,800 requests per second, providing exceptional performance for the end-users. I also ensured that the data shape returned by the API was consistent with the previous API, exceeding customer requirements and leaving room for future growth through scaling.",
-      link: "http://wagsandwalkies.dog/",
-      repo: "https://github.com/kemp3673/WagsAndWalkies",
+      repo: "https://github.com/kemp3673/Project-Himalia",
     },
     portfolioSite: {
       title: "Portfolio Site",
       image: portfolioSite,
       description:
         "Personal Portfolio Website to showcase my skills and experience. Utilized React-Three-Fiber for a 3D element, CSS styling/animations, and added a resume download option and contact form. Implemented a full-stack solution using JavaScript, React, React-Three-Fiber, and CSS on the front-end and Node/Express in TypeScript on the back-end.",
-      link: "http://wagsandwalkies.dog/",
-      repo: "https://github.com/kemp3673/WagsAndWalkies",
+      repo: "https://github.com/kemp3673/Portfolio-2.0",
     },
   };
 
@@ -74,8 +73,20 @@ const Projects = () => {
             <img src={selected.image} alt={selected.id} />
           </div>
           <div className="description">
-              <p>{selected.description}</p>
-            </div>
+            <p>{selected.description}</p>
+          </div>
+        </div>
+        <div className="portfolioLink">
+          <span className="portfolioRepo">Check Out the Repo <ArrowForwardIcon style={{ fontSize: "32px" }}/></span>
+          <a
+            href={selected.repo}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to Github Repository"
+            className="repo_link"
+          >
+            <GitHubIcon style={{ fontSize: "32px" }} />
+          </a>
         </div>
       </div>
     </div>

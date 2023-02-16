@@ -10,7 +10,7 @@
   align-items: center;
   scroll-snap-align: start;
   height: fit-content;
-  /* padding: 50px 0 50px 0; */
+  padding-top: 50px;
 }
 
 .projects h1 {
@@ -27,6 +27,7 @@
   /* margin: 20px; */
   color: #032539;
   justify-content: center;
+  width: fit-content;
   height: fit-content;
 }
 
@@ -44,8 +45,9 @@
 .portfolioContainer {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   width: 90%;
   max-width: 1200px;
 }
@@ -55,6 +57,33 @@
   display: block;
   border-bottom: solid 2px #FA991C;
   animation: selected 0.5s ease-in-out;
+}
+
+.portfolioLink {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  width: 100%;
+  height: 100%;
+  margin: 10px 0 0 0;
+}
+
+.portfolioRepo {
+  font-family: 'Roboto slab', sans-serif;
+  color: #032539;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.repo_link {
+  display: flex;
+  text-decoration: none;
+  color: #032539;
+  align-content: center;
+  justify-content: center;
 }
 
 @keyframes selected {
@@ -83,9 +112,9 @@
   border-radius: 20px;
   position: relative;
   display: flex;
-  max-width: 900px;
+  width: 90%;
   /* max-height: calc(80% - 2rem); */
-  margin: 10px;
+  /* margin: 10px; */
   z-index: 2;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
@@ -100,8 +129,8 @@
   position: absolute;
   /* top: 0;
   left: 0; */
-  height: 95%;
-  width: 96%;
+  height: 100%;
+  width: 90%;
   border-radius: 20px;
   /* max-width: 900px; */
   display: flex;
@@ -112,7 +141,7 @@
   align-content: center;
   color: #FFFFFF;
   background-color: #032539;
-  box-shadow: #032539 0px 0px 10px 0px;
+  /* box-shadow: #032539 0px 0px 10px 0px; */
   /* padding: 20px; */
   z-index: 1;
 }
@@ -161,12 +190,32 @@
     width: 100%;
   }
 
+  .portfolioItem {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .overlay {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .overlay:hover {
+    opacity: 1;
+  }
+
   .description {
-    width: 96%;
-    height: 93%;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-align: justify;
-    z-index: 1;
+    background-color: whitesmoke;
+    color: #032539;
+    font-weight: 300;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
   }
 }

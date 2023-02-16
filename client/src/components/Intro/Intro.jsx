@@ -16,7 +16,7 @@ const Intro = () => {
         <TypeWriter />
       </div>
       <div className="downIconWrapper">
-      <a href="#projects">
+      <a href="#skills">
         <img src={downIcon} className="downIcon" />
       </a>
       </div>
