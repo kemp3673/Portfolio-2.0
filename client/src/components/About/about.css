@@ -95,7 +95,7 @@
   align-items: center;
   height: 20rem;
   transform: rotate(10deg);
-  border: 0.1rem solid #032539;
+  /* border: 1px solid #032539; */
   box-shadow: black 0px 0px 0.25rem;
 }
 
@@ -117,17 +117,19 @@
     padding: 0;
   }
   .aboutDescription {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin-right: 0;
+    padding: 10px;
   }
 
   .aboutContainer {
     flex-direction: column;
-    width: 85%;
+    width: 100%;
+    padding: 10px;
   }
 
   .about h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
 
@@ -147,5 +149,9 @@
 
   .aboutLeft {
     min-height: 200px;
+  }
+
+  .aboutRight {
+    width: 100%;
   }
 }

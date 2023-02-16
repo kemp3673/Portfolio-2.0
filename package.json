@@ -57,6 +57,7 @@
     "@mui/material": "^5.11.7",
     "@react-three/drei": "^9.56.12",
     "@react-three/fiber": "^8.10.1",
+    "@types/nodemailer": "^6.4.7",
     "@types/three": "^0.149.0",
     "axios": "^1.2.5",
     "babel-loader": "^9.1.2",

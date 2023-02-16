@@ -6,6 +6,7 @@ import Menu from "../components/Menu/Menu.jsx";
 import Intro from "../components/Intro/Intro.jsx";
 import About from "../components/About/About.jsx";
 import Projects from "../components/Projects/Projects.jsx";
+import Skills from "../components/Skills/Skills.jsx";
 import Contact from "../components/Contact/Contact.jsx";
 
 
@@ -20,6 +21,7 @@ const Home = () => {
       <div className="sections">
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <Intro />
+        <Skills />
         <Projects />
         <About />
         <Contact />

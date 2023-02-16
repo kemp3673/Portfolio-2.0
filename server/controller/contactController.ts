@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-
+import sendContact from '../model/contactModel';
 
 const contact = (req: Request, res: Response) => {
-  console.log('contact page: ' + req.url + ' ' + req.method + ' ' + req.body )
-  res.status(200).send('contact page');
+  console.log(req.body);
+  sendContact(req, res);
 }
 
 export default contact;

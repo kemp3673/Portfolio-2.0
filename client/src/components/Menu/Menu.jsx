@@ -49,6 +49,9 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
           <a href="#intro">Home</a>
         </li>
         <li onClick={() => sidebarClickHandler()}>
+          <a href="#skills">Skills</a>
+        </li>
+        <li onClick={() => sidebarClickHandler()}>
           <a href="#projects">Portfolio</a>
         </li>
         <li onClick={() => sidebarClickHandler()}>
