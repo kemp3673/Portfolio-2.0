@@ -1,4 +1,4 @@
-import React, {Suspense, useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "react-three-fiber";
 import * as THREE from "three";
 import { OrbitControls, ScrollControls, useGLTF } from "@react-three/drei";
@@ -22,7 +22,7 @@ const LaptopModel = () => {
     vid.loop = true;
     vid.play();
     return vid;
-  });
+  }, []);
   // Return model with video texture
   return (
     // Laptop model
@@ -67,6 +67,7 @@ const ThreeScene = () => {
         </Suspense>
     </Canvas>
   );
-}
+};
+
 
 export default ThreeScene;
