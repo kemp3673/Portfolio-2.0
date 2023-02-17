@@ -1,6 +1,6 @@
 import React from "react";
 // Styling
-import "./Skills.css";
+import "./skills.css";
 
 const Skills = () => {
   return (
