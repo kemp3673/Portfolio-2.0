@@ -68,7 +68,8 @@ const ThreeScene = () => {
   // Return canvas with model
   return (
     <Canvas dpr={window.devicePixelRatio}>
-        {width > 768 && <Controls />}
+      {/* Current bug, when Controls is rendered it crashed deployed site. Not repeatable on local */}
+        {/* {width > 768 && <Controls />} */}
         <directionalLight intensity={1.5} />
         <Suspense fallback={null}>
           <LaptopModel />
