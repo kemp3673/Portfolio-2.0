@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
+// Utils
+import scrollTo from "../../utils/scrollTo.js";
+// Styling
+import "./topbar.css";
+// Icons
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import MailIcon from '@mui/icons-material/Mail';
-import "./topbar.css";
 
 const TopBar = ({menuOpen, setMenuOpen}) => {
-
+  // Function to toggle menu open and closed
   const menuClickHandler = (e) => {
       setMenuOpen(!menuOpen);
   };
@@ -12,7 +16,7 @@ const TopBar = ({menuOpen, setMenuOpen}) => {
   return (
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="left">
-        <a href="#intro" className="logo">
+        <a href="#intro" className="logo" onClick = {() => scrollTo('#intro')}>
           Nick K.
         </a>
         <div className="itemContainer">

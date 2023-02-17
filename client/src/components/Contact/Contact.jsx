@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { formValidation } from "./formValidation.js";
+// Utils
+import formValidation from "../../utils/formValidation.js";
+// Styling
 import {
   SendButton,
   SuccessButton,
@@ -9,9 +11,9 @@ import {
   DotTyping,
   AnimationWrapper,
 } from "./contactElements";
-import { BsCheckLg } from "react-icons/bs";
 import "./contact.css";
-
+// Icons & Images
+import { BsCheckLg } from "react-icons/bs";
 import contactBackground from "../../assets/contactBackground.jpeg";
 
 const Contact = () => {
@@ -36,14 +38,19 @@ const Contact = () => {
       <BsCheckLg style={{ transform: "translateY(4px)", marginLeft: "8px" }} />
     </SuccessButton>,
   ];
-  // State values
+  /*** State values ***/
+  // Form values
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  // Form validation
   const [canSubmit, setCanSubmit] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  // Button state
   const [currentButton, setCurrentButton] = useState(conditionalButtons[0]);
+  // Form submission
   const [handleSubmit, setHandleSubmit] = useState(false);
   const [canSend, setCanSend] = useState(false);
+  // Error handling
   const [mailError, setMailError] = useState("");
 
   // STEP 1: When Send button is clicked, triggers handleSend
@@ -81,7 +88,6 @@ const Contact = () => {
       message: `${message}`,
       email: `${email}`,
     };
-
     axios
       .post("/contact", body)
       .then((res) => {

@@ -1,8 +1,9 @@
 import React from "react";
+// Styling
 import "./projects.css";
+// Icons
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
 // Images
 import wagsandwalkies from "../../assets/wagsandwalkies.png";
 import portfolioSite from "../../assets/portfolioSite.png";
@@ -42,8 +43,9 @@ const Projects = () => {
     },
   };
 
+  // Track selected project
   const [selected, setSelected] = React.useState(list.featured);
-
+  // Update project when a new one is selected
   const handleChange = (e) => {
     document.querySelector(".selected").classList.remove("selected");
     setSelected(list[e.target.id]);
@@ -70,7 +72,7 @@ const Projects = () => {
       <div className="portfolioContainer">
         <div className="portfolioItem">
           <div className="overlay">
-            <img src={selected.image} alt={selected.id} />
+            <img src={selected.image} alt={selected.title} />
           </div>
           <div className="description">
             <p>{selected.description}</p>
