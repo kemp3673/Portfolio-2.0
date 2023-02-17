@@ -1,4 +1,5 @@
-export const formValidation = (email, message) => {
+// Purpose: To validate the form inputs
+const formValidation = (email, message) => {
     console.log("here: ", email, message);
     const results = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -15,3 +16,5 @@ export const formValidation = (email, message) => {
     }
     return results;
   }
+
+  export default formValidation;

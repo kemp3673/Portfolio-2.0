@@ -3,21 +3,19 @@ import TypeWriterEffect from "react-typewriter-effect";
 import "./typewriter.css";
 
 const TypeWriter = () => {
-
   // Get screen size
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
   const [colorSelect, setColorSelect] = React.useState("#1C768F");
-
+  // Update screen size on resize
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
-
-
+  // Add event listener on mount
   useEffect(() => {
     window.addEventListener("resize", updateScreenWidth);
     return () => window.removeEventListener("resize", updateScreenWidth);
   }, []);
-
+  // Change color on screen size
   useEffect(() => {
       if (screenWidth <= 768) {
         setColorSelect("#FA991C");
@@ -25,7 +23,7 @@ const TypeWriter = () => {
         setColorSelect("#1C768F");
       }
   }, [screenWidth]);
-
+  // Return typewriter effect
   return (
     <div className="typewriter">
       <div className="typewriterWrapper">
@@ -36,7 +34,6 @@ const TypeWriter = () => {
           textStyle={{
             fontFamily: "Roboto Slab",
             fontSize: "2rem",
-            // color: "rgb(96, 0, 96)",
             color: colorSelect,
             textShadow: "white 0 0 0.5em"
           }}

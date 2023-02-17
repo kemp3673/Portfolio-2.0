@@ -61,7 +61,7 @@
 
 .downIcon {
   position: relative;
-  height: 150px;
+  height: 171px;
   width: 150px;
   cursor: pointer;
   animation: bouncer 2s infinite;
@@ -84,7 +84,6 @@
 @media screen and (max-width: 1024px) {
   .intro {
     flex-direction: column;
-    min-height: calc(100vh - 50px);
   }
   .circleElement {
     display: none;

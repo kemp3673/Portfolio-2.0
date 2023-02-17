@@ -1,24 +1,30 @@
 import React from "react";
+// Components
 import TypeWriter from "./TypeWriter/TypeWriter.jsx";
 import Laptop from "./LaptopModel/LaptopModel.jsx";
-import downIcon from "../../assets/downIcon.png";
+// Utils
+import scrollTo from "../../utils/scrollTo.js";
+// Styling
 import "./intro.css";
+// Icons & Images
+import downIcon from "../../assets/downIcon.png";
 
 const Intro = () => {
   return (
     <div className="intro" id="intro">
       <div className="circleElement"/>
       <div className="introLeft">
+          {/* 3D Laptop Model with Video Texture Screen */}
           <Laptop />
-          {/* This work is based on "Laptop" (https://sketchfab.com/3d-models/laptop-3487cc0341934da8aa8c294e8b006a23) by GeniusPilot2016 (https://sketchfab.com/GeniusPilot2016) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/) */}
       </div>
       <div className="introRight">
+        {/* Typewriter Effect for splash message*/}
         <TypeWriter />
       </div>
       <div className="downIconWrapper">
-      <a href="#skills">
-        <img src={downIcon} className="downIcon" />
-      </a>
+      <span onClick = {() => scrollTo('#skills')}>
+        <img src={downIcon} alt="Down Icon" aria-label="Scroll to skills" className="downIcon" />
+      </span>
       </div>
     </div>
   );

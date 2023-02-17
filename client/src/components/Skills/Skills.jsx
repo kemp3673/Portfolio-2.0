@@ -1,4 +1,5 @@
 import React from "react";
+// Styling
 import "./Skills.css";
 
 const Skills = () => {
