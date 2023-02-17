@@ -10,6 +10,20 @@ import "./laptopModel.css";
 
 {/* This work is based on "Laptop" (https://sketchfab.com/3d-models/laptop-3487cc0341934da8aa8c294e8b006a23) by GeniusPilot2016 (https://sketchfab.com/GeniusPilot2016) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/) */}
 
+// Separate component for OrbitControls
+const Controls = () => {
+  return (
+    <OrbitControls
+      maxPolarAngle={Math.PI / 2}
+      minPolarAngle={0}
+      maxZoom={1}
+      minZoom={1}
+      enablePan={false}
+      enableZoom={false}
+    />
+  );
+};
+
 const LaptopModel = () => {
   // Load GLTF model
   const laptop = useGLTF("laptop.glb");
@@ -54,13 +68,7 @@ const ThreeScene = () => {
   // Return canvas with model
   return (
     <Canvas dpr={window.devicePixelRatio}>
-        {width <= 768 ? null : <OrbitControls maxPolarAngle={Math.PI / 2}
-        minPolarAngle={0}
-        maxZoom={1}
-        minZoom={1}
-        enablePan={false}
-        enableZoom={false}
-        />}
+        {width > 768 && <Controls />}
         <directionalLight intensity={1.5} />
         <Suspense fallback={null}>
           <LaptopModel />
