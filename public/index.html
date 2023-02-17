@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Nicholas Kempkes' personal portfolio site. Come and learn more about me and what I have been up to."
+  />
+  <meta name="theme-color" content="#032539"/>
+  <link rel="icon" type="image/x-icon" href="resume.png"/>
+  <link rel="apple-touch-icon" href="resume.png">
+  <title>Nicholas Kempkes Portfolio Website</title>
+  <script defer src="main.js"></script>
+  <style>
+    @keyframes spinner {
+      0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+      }
+      100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+      }
+    }
+    .spin::before {
+      animation: 1.5s linear infinite spinner;
+      animation-play-state: inherit;
+      border: solid 5px #cfd0d1;
+      border-bottom-color: #1c87c9;
+      border-radius: 50%;
+      content: "";
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      will-change: transform;
+    }
+
+    .load {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 2rem;
+      color: #1c87c9;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+<!-- TODO hide spinner when page is loaded -->
+  <div class="spin">
+  <div class="load">
+    <p>LOADING...</p>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const spinner = document.querySelector(".spin");
+      spinner.style.display = "none";
+      const loading = document.querySelector(".load");
+      loading.style.display = "none";
+    });
+  </script>
+  </div>
+  <div id="root">
+  </div>
+</body>
+</html>
