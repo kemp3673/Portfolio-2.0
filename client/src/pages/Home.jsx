@@ -8,7 +8,7 @@ import Projects from "../components/Projects/Projects.jsx";
 import Skills from "../components/Skills/Skills.jsx";
 import Contact from "../components/Contact/Contact.jsx";
 // Styling
-import "./Home.css";
+import "./home.css";
 
 const Home = () => {
   // Open state for menu
