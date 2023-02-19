@@ -21,5 +21,5 @@ app.use(router)
 
 
 // Path: server/src/index.ts
-const server = app.listen(PORT, () => console.log(`Server Running here 👉 https://localhost:${PORT}`));
+const server = app.listen(PORT, () => console.log(`Server Running here 👉 http://localhost:${PORT}`));
 module.exports = server;

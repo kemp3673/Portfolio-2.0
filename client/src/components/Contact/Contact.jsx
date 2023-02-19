@@ -112,6 +112,7 @@ const Contact = () => {
         <h2 className="contactTitle">Contact</h2>
         <form className="contactForm">
           <input
+            name="email"
             type="text"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -120,6 +121,7 @@ const Contact = () => {
             <span className="formErrors">{formErrors.email}</span>
           ) : null}
           <textarea
+            name="message"
             placeholder="Message"
             onChange={(e) => setMessage(e.target.value)}
           />

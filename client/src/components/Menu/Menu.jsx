@@ -39,6 +39,7 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
     <div className={"menu " + (menuOpen && "active")} ref={ref}>
       <ul>
         <li onClick={() => handleScroll('#intro')}>
+          {/*  TODO replace anchor tags with spans as #ID in the url is not needed for single page */}
           <a href="#intro">Home</a>
         </li>
         <li onClick={() => handleScroll('#skills')}>

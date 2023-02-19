@@ -114,6 +114,8 @@
   border: none;
   border-bottom: 2px solid #032539;
   resize: vertical;
+  /* Find way to use percentage of height instead of 300px */
+  max-height: 300px;
 }
 
 .contactForm>label {
@@ -124,6 +126,11 @@
   color: red;
   font-size: 1rem;
   margin-top: 5px;
+}
+
+/* Needed to change autofill to transparent background instead of white */
+input:-webkit-autofill {
+  -webkit-background-clip: text !important;
 }
 
 @media screen and (max-width: 768px) {
