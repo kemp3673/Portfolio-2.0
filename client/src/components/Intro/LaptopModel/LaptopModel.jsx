@@ -28,11 +28,9 @@ const LaptopModel = () => {
   // Rotate laptop model
   useFrame(() => {
     if (ref.current.position.z > -1) {
-      console.log("POSITION: ", ref.current.position.z);
       ref.current.position.z -= 0.1;
     }
     if (ref.current.rotation.y < 0.7) {
-      console.log("Y: ", ref.current.rotation.y);
       ref.current.rotation.y += 0.018;
     }
   });
