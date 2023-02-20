@@ -31,7 +31,7 @@ const LaptopModel = () => {
       ref.current.position.z -= 0.1;
     }
     if (ref.current.rotation.y < 0.7) {
-      ref.current.rotation.y += 0.018;
+      ref.current.rotation.y += 0.0178;
     }
   });
   // Return model with video texture
