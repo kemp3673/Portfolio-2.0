@@ -40,19 +40,19 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
       <ul>
         <li onClick={() => handleScroll('#intro')}>
           {/*  TODO replace anchor tags with spans as #ID in the url is not needed for single page */}
-          <a href="#intro">Home</a>
+          <span>Home</span>
         </li>
         <li onClick={() => handleScroll('#skills')}>
-          <a href="#skills">Skills</a>
+          <span>Skills</span>
         </li>
         <li onClick={() => handleScroll('#projects')}>
-          <a href="#projects">Portfolio</a>
+          <span>Portfolio</span>
         </li>
         <li onClick={() => handleScroll('#about')}>
-          <a href="#about">About</a>
+          <span>About</span>
         </li>
         <li onClick={() => handleScroll('#contact')}>
-          <a href="#contact">Contact</a>
+          <span>Contact</span>
         </li>
         <li>
           <button className="resumeButton" onClick={(e) => resumeDownloader(e)}>
