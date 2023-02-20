@@ -16,9 +16,9 @@ const TopBar = ({menuOpen, setMenuOpen}) => {
   return (
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="left">
-        <a href="#intro" className="logo" onClick = {() => scrollTo('#intro')}>
+        <span className="logo" onClick = {() => scrollTo('#intro')}>
           Nick K.
-        </a>
+        </span>
         <div className="itemContainer">
           <PhoneAndroidIcon className="icon" />
           <span className="contact-icon">+1 218 770 3673</span>
