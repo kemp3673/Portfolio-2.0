@@ -52,13 +52,10 @@ ul > li > span:hover {
   width: fit-content;
   height: fit-content;
   padding: 10px 20px;
-  /* background-color: #551A8B; */
   background-color: #1C768F;
   color: white;
   font-size: 20px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  display: flex;
   z-index: 2;
   cursor: pointer;
   transition: all 0.5s ease;
