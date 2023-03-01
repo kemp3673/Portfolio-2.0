@@ -124,7 +124,15 @@ https://analytics.google.com/analytics/web/
    ```sh
    npm install
    ```
-
+3. Scripts
+    ```sh
+    "dev": "webpack --mode=development --watch",
+    "prod": "webpack --mode=production",
+    "server": "ts-node ./server/app.ts",
+    "server-dev": "ts-node-dev --respawn ./server/app.ts",
+    "test": "jest --coverage",
+    "test-watch": "jest --watchAll --coverage"
+    ```
 <p align="right">(<a href="#portfolio-readme">back to top</a>)</p>
 
 <!-- DEMO -->
