@@ -9,6 +9,7 @@ import "./app.css";
 const trackingId = "G-88F04Y470H";
 ReactGA.initialize(trackingId);
 
+// App.js
 function App() {
   return (
     <div className="App">
